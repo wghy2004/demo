@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9" > </meta>
+<title>示例商城-后台管理</title>
+<style type="text/css">
+body{
+	margin:0px;
+	font-family:Arial,"宋体",Verdana,sans-serif;
+	font-size:12px;
+}
+html,body {padding: 0;margin: 0; overflow-x:hidden; overflow-y:auto;}
+dl,dd{margin:0px}
+ul{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+}
+</style>
+
+
+<link rel="stylesheet" type="text/css" href="css/easyui.css"/>    
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/easyui-lang-zh_CN.js"></script>
+
+</head>
+<body>
+ 
+<script language="javascript"> 
+</script> 
+
+<div id="goodsSelectDiv"></div>
+<div id="photoDiv"></div><style>
+.searchAdvancedS{
+background-color: #FDEA7A;
+}
+
+</style>
+<div id="loading"></div>
+<div class="main">
+	<form id="gridform" method="post">
+		<div class='buttonArea'>
+			<span id="searchbtn">	
+				<a href="javascript:void(0)" class="button blueButton"  onclick="newTab('添加商品','/version4/shop/admin/goods!selectCat.do')">添加</a>
+				<a href="javascript:void(0)" class="button"  onclick="del()">删除</a>
+				<a href="javascript:void(0)" class="button"  onclick="newTab('商品回收站','/version4/shop/admin/goods!trash_list.do')">回收站</a>
+			</span>
+			<span class="fr"> 
+				<input id="searchKeyword" class="input_text  mr5" type="text" value="" size="30"	placeholder="请输入模糊关键字" name="searchKeyWord">
+				<a href="javascript:void(0)" class="button " id="aAdvanced"  >高级搜索</a>
+				<a href="javascript:void(0)" class="button " onclick="searchGoods()">搜索</a>
+			</span>
+		</div>
+		
+		<div style="display: block;" class="searchAdvanced" >
+		<input id="Advanced" name="Advanced" type="hidden" value="0" />
+			<table width="98%" border="0" cellspacing="0" cellpadding="8">
+				<tr>
+					<td width="70" align="right">商品名称</td>
+					<td>
+						<input type="text" value="" id="name"  class="input_text" style="width: 95%;" >
+					</td>
+					<td width="70" align="right">商品编号</td>
+					<td>
+						<input type="text" value="" id="sn"class="input_text" style="width: 95%;">
+					</td>
+					<td width="70" align="right">类别</td>
+					<td>
+						<input class="easyui-combotree" name="cat.parent_id" id="catid"
+						 />
+					</td>
+					<td>
+						<a id="searchAdvance" class="button blueButton" onclick="searchGoods()" href="javascript:;">开始搜索</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+	<div class="clear height10"></div>
+		<div class="shadowBoxWhite tableDiv">
+			<table class="easyui-datagrid" id="goodsdata">
+				<thead>
+					<tr>
+						<th data-options="field:'itemid'" >id</th>
+						<th data-options="field:'itemid1'" >商品编号</th>
+						<th data-options="field:'itemid2'">商品名称</th>
+						<th data-options="field:'itemid3'">分类</th>
+						<th data-options="field:'itemid4'">销售价格</th>
+						<th data-options="field:'itemid5'">上架</th>
+						<th data-options="field:'itemid6'">品牌</th>
+						<th data-options="field:'itemid7'" >上架时间</th>
+						<th data-options="field:'itemid8'">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							商品编号
+						</td>
+						<td>
+							商品编号
+						</td>
+						<td>
+							商品编号
+						</td>
+						<td>
+							商品编号
+						</td>
+						<td>
+							商品编号
+						</td>
+						<td>
+							商品编号
+						</td>
+						<td>
+							商品编号
+						</td>
+						<td>
+							商品编号
+						</td>
+						<td>
+							商品编号
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+
+
+</script>
+</body>
+</html>
+
